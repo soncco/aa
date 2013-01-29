@@ -1,0 +1,36 @@
+{% extends '::backend.html.twig' %}
+
+{% block id 'traslado' %}
+{% block title %}Listado de traslados{% endblock %}
+
+{% block content %}
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <th>{{ entity.nombre }}</th>
+            <th>{{ entity.precio }}</th>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('backend_traslado_edit', { 'id': entity.id }) }}">Modificar</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+{% block button_area %}
+<a class="button_primary button continue" href="{{ path('backend_traslado_new') }}">
+  Añadir un nuevo traslado
+</a>
+{% endblock %}

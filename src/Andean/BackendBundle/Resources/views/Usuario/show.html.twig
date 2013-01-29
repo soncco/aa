@@ -1,0 +1,28 @@
+{% extends '::backend.html.twig' %}
+
+{% block id 'usuario' %}
+{% block title %}Datos del usuario '{{ entity.usuario }}'{% endblock %}
+
+{% block content %}
+
+<div class="input_wrapper">
+  Nombres: <strong>{{ entity.nombres }}</strong>
+</div>
+<div class="input_wrapper">
+  Usuario: <strong>{{ entity.usuario }}</strong>
+</div>
+<div class="input_wrapper">
+  E-mail: <strong>{{ entity.email }}</strong>
+</div>
+<div class="input_wrapper">
+  Rol: <strong>{{ entity.rol }}</strong>
+</div>
+
+{% endblock %}
+{% block button_area %}
+<a href="{{ path('backend_usuario_edit', { 'id': entity.id }) }}" class="button"><div class="icon"></div>Modificar Categoría</a>
+<a href="{{ path('backend_usuario') }}" class="button"><div class="icon back"></div>Volver al listado</a>
+<a class="button_primary button continue" href="{{ path('backend_usuario_new') }}">
+  Añadir una nueva categoría
+</a>
+{% endblock %}

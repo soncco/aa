@@ -1,0 +1,25 @@
+{% extends '::backend.html.twig' %}
+
+{% block id 'hotelempresa' %}
+{% block title %}Datos de la empresa de tren {{ entity }}{% endblock %}
+
+{% block content %}
+
+<div class="input_wrapper">
+  Nombre: <strong>{{ entity.nombre }}</strong>
+</div>
+<div class="input_wrapper">
+  Categoría: <strong>{{ entity.categoria }}</strong>
+</div>
+<div class="input_wrapper">
+  Ciudad: <strong>{{ entity.ciudad }}</strong>
+</div>
+
+{% endblock %}
+{% block button_area %}
+<a href="{{ path('backend_hotelempresa_edit', { 'id': entity.id }) }}" class="button"><div class="icon"></div>Modificar Empresa</a>
+<a href="{{ path('backend_hotelempresa') }}" class="button"><div class="icon back"></div>Volver al listado</a>
+<a class="button_primary button continue" href="{{ path('backend_hotelempresa_new') }}">
+  Añadir una nueva empresa
+</a>
+{% endblock %}

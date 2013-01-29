@@ -1,0 +1,19 @@
+{% extends '::backend.html.twig' %}
+
+{% block id 'ciudad' %}
+{% block title %}Datos de la ciudad {{ entity }}{% endblock %}
+
+{% block content %}
+
+<div class="input_wrapper">
+  Nombre: <strong>{{ entity.nombre }}</strong>
+</div>
+
+{% endblock %}
+{% block button_area %}
+<a href="{{ path('backend_ciudad_edit', { 'id': entity.id }) }}" class="button"><div class="icon"></div>Modificar Ciudad</a>
+<a href="{{ path('backend_ciudad') }}" class="button"><div class="icon back"></div>Volver al listado</a>
+<a class="button_primary button continue" href="{{ path('backend_ciudad_new') }}">
+  Añadir una nueva ciudad
+</a>
+{% endblock %}

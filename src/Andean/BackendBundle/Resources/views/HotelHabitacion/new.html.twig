@@ -1,0 +1,22 @@
+{% extends '::backend.html.twig' %}
+
+{% block id 'hotelhabitacion' %}
+{% block title %}Añadir una nueva habitación de hotel{% endblock %}
+
+{% block content %}
+{{ form_errors(form) }}
+<form action="{{ path('backend_hotelhabitacion_create') }}" method="post" {{ form_enctype(form) }}>
+    <div class="input_wrapper">
+    {{ form_row(form.hotel) }}
+    {{ form_row(form.acomodacion) }}
+    {{ form_row(form.precio) }}
+    </div>
+    <p>
+        <button class="button_primary button continue" type="submit">Añadir habitación</button>
+    </p>
+    {{ form_rest(form) }}
+</form>
+{% endblock %}
+{% block button_area %}
+<a href="{{ path('backend_hotelhabitacion') }}" class="button"><div class="icon back"></div>Volver al listado</a>
+{% endblock %}

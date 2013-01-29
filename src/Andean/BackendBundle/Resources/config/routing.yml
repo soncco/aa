@@ -1,0 +1,86 @@
+# Portada de la parte de administración.
+backend_portada:
+    pattern:  /
+    defaults: { _controller: BackendBundle:Default:index }
+    
+# Rutas de Administración.
+admin_login:
+    pattern: /login
+    defaults: { _controller: BackendBundle:Default:login }
+
+admin_login_check:
+    pattern: /login_check
+  
+admin_logout:
+    pattern: /logout
+    
+BackendUsuario:
+    resource: "@BackendBundle/Resources/config/routing/usuario.yml"
+    prefix:   /usuario
+
+# Rutas Varias
+BackendCiudad:
+    resource: "@BackendBundle/Resources/config/routing/ciudad.yml"
+    prefix:   /ciudad
+
+BackendTour:
+    resource: "@BackendBundle/Resources/config/routing/tour.yml"
+    prefix:   /tour
+
+BackendTraslado:
+    resource: "@BackendBundle/Resources/config/routing/traslado.yml"
+    prefix:   /traslado
+
+BackendServicio:
+    resource: "@BackendBundle/Resources/config/routing/servicio.yml"
+    prefix:   /servicio
+
+# Rutas de Tren.
+BackendAcomodacion:
+    resource: "@BackendBundle/Resources/config/routing/acomodacion.yml"
+    prefix:   /acomodacion
+    
+BackendCategoria:
+    resource: "@BackendBundle/Resources/config/routing/categoria.yml"
+    prefix:   /categoria
+
+BackendTrenEmpresa:
+    resource: "@BackendBundle/Resources/config/routing/trenempresa.yml"
+    prefix:   /tren_empresa
+    
+BackendTrenTipo:
+    resource: "@BackendBundle/Resources/config/routing/trentipo.yml"
+    prefix:   /tren_tipo
+    
+BackendTrenHorario:
+    resource: "@BackendBundle/Resources/config/routing/trenhorario.yml"
+    prefix:   /tren_horario
+
+BackendTrenDisponibilidad:
+    resource: "@BackendBundle/Resources/config/routing/trendisponibilidad.yml"
+    prefix:   /tren_disponibilidad
+
+# Rutas de Hoteles.
+BackendHotelEmpresa:
+    resource: "@BackendBundle/Resources/config/routing/hotelempresa.yml"
+    prefix:   /hotel_empresa
+    
+BackendHotelHabitacion:
+    resource: "@BackendBundle/Resources/config/routing/hotelhabitacion.yml"
+    prefix:   /hotel_habitacion
+    
+BackendHotelDisponibilidad:
+    resource: "@BackendBundle/Resources/config/routing/hoteldisponibilidad.yml"
+    prefix:   /hotel_disponibilidad
+    
+backend_mapi_calendar:
+    pattern:  /mapi/calendar
+    defaults: { _controller: "BackendBundle:Mapi:calendar" }
+    
+backend_mapi_single:
+    pattern:  /mapi
+    defaults: { _controller: "BackendBundle:Mapi:calendar" }
+
+_backend_mapi_calendar:
+    pattern:  /mapi/{month}/{year}/calendar
+    defaults: { _controller: "BackendBundle:Mapi:calendar" }

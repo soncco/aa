@@ -1,0 +1,16 @@
+backend_trendisponibilidad:
+    pattern:  /
+    defaults: { _controller: "BackendBundle:TrenDisponibilidad:index" }
+    
+backend_trendisponibilidad_calendar:
+    pattern:  /{id}/calendar
+    defaults: { _controller: "BackendBundle:TrenDisponibilidad:calendar" }
+    
+_backend_trendisponibilidad_calendar:
+    pattern:  /{id}/{month}/{year}/calendar
+    defaults: { _controller: "BackendBundle:TrenDisponibilidad:calendar" }
+    
+backend_trendisponibilidad_update:
+    pattern:  /update
+    defaults: { _controller: "BackendBundle:TrenDisponibilidad:update", id: null, date: null, espacios: null }
+    #requirements: { _method: post }

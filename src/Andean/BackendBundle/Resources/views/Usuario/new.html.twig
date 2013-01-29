@@ -1,0 +1,24 @@
+{% extends '::backend.html.twig' %}
+
+{% block id 'usuario' %}
+{% block title %}Añadir un nuevo usuario{% endblock %}
+
+{% block content %}
+{{ form_errors(form) }}
+<form action="{{ path('backend_usuario_create') }}" method="post" {{ form_enctype(form) }}>
+    <div class="input_wrapper">
+    {{ form_row(form.nombres) }}
+    {{ form_row(form.usuario) }}
+    {{ form_row(form.password) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.rol) }}
+    </div>
+    <p>
+        <button class="button_primary button continue" type="submit">Añadir usuario</button>
+    </p>
+    {{ form_rest(form) }}
+</form>
+{% endblock %}
+{% block button_area %}
+<a href="{{ path('backend_usuario') }}" class="button"><div class="icon back"></div>Volver al listado</a>
+{% endblock %}

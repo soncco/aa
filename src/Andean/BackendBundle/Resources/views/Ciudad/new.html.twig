@@ -1,0 +1,20 @@
+{% extends '::backend.html.twig' %}
+
+{% block id 'ciudad' %}
+{% block title %}Añadir una nueva ciudad{% endblock %}
+
+{% block content %}
+{{ form_errors(form) }}
+<form action="{{ path('backend_ciudad_create') }}" method="post" {{ form_enctype(form) }}>
+    <div class="input_wrapper">
+    {{ form_row(form.nombre) }}
+    </div>
+    <p>
+        <button class="button_primary button continue" type="submit">Añadir ciudad</button>
+    </p>
+    {{ form_rest(form) }}
+</form>
+{% endblock %}
+{% block button_area %}
+<a href="{{ path('backend_ciudad') }}" class="button"><div class="icon back"></div>Volver al listado</a>
+{% endblock %}

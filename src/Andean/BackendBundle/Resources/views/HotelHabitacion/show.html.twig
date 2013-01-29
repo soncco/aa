@@ -1,0 +1,25 @@
+{% extends '::backend.html.twig' %}
+
+{% block id 'hotelhabitacion' %}
+{% block title %}Datos de la habitación {{ entity }}{% endblock %}
+
+{% block content %}
+
+<div class="input_wrapper">
+  Hotel: <strong>{{ entity.hotel }}</strong>
+</div>
+<div class="input_wrapper">
+  Acomodación: <strong>{{ entity.acomodacion }}</strong>
+</div>
+<div class="input_wrapper">
+  Precio: <strong>{{ entity.precio }}</strong>
+</div>
+
+{% endblock %}
+{% block button_area %}
+<a href="{{ path('backend_hotelhabitacion_edit', { 'id': entity.id }) }}" class="button"><div class="icon"></div>Modificar</a>
+<a href="{{ path('backend_hotelhabitacion') }}" class="button"><div class="icon back"></div>Volver al listado</a>
+<a class="button_primary button continue" href="{{ path('backend_hotelhabitacion_new') }}">
+  Añadir una nueva habitación
+</a>
+{% endblock %}

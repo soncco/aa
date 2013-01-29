@@ -1,0 +1,13 @@
+{% for tipo, mensajes in app.session.flashbag.all() %}
+  {% for mensaje in mensajes %}
+    <div id="success_dialog"></div>
+    <div class="message {{tipo}} free_message"><a alt="close" class="close_button" ></a>
+      <div class="message_icon_background">
+        <div class="message_icon"></div>
+      </div>
+      <div class="message_text_container">
+        {{ mensaje }}
+      </div>
+    </div>
+  {% endfor %}
+{% endfor %}

@@ -1,0 +1,30 @@
+backend_trenempresa:
+    pattern:  /
+    defaults: { _controller: "BackendBundle:TrenEmpresa:index" }
+
+backend_trenempresa_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "BackendBundle:TrenEmpresa:show" }
+
+backend_trenempresa_new:
+    pattern:  /new
+    defaults: { _controller: "BackendBundle:TrenEmpresa:new" }
+
+backend_trenempresa_create:
+    pattern:  /create
+    defaults: { _controller: "BackendBundle:TrenEmpresa:create" }
+    requirements: { _method: post }
+
+backend_trenempresa_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "BackendBundle:TrenEmpresa:edit" }
+
+backend_trenempresa_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "BackendBundle:TrenEmpresa:update" }
+    requirements: { _method: post }
+
+backend_trenempresa_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "BackendBundle:TrenEmpresa:delete" }
+    requirements: { _method: post }

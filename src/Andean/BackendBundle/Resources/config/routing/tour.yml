@@ -1,0 +1,27 @@
+# Rutas para gestionar todas las acciones de las entidades de tipo Tour
+# Generado automáticamente por el comando generate:doctrine:crud
+backend_tour:
+    pattern:  /
+    defaults: { _controller: "BackendBundle:Tour:index" }
+
+backend_tour_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "BackendBundle:Tour:show" }
+
+backend_tour_new:
+    pattern:  /new
+    defaults: { _controller: "BackendBundle:Tour:new" }
+
+backend_tour_create:
+    pattern:  /create
+    defaults: { _controller: "BackendBundle:Tour:create" }
+    requirements: { _method: post }
+
+backend_tour_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "BackendBundle:Tour:edit" }
+
+backend_tour_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "BackendBundle:Tour:update" }
+    requirements: { _method: post }

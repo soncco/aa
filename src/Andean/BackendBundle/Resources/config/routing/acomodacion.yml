@@ -1,0 +1,25 @@
+backend_acomodacion:
+    pattern:  /
+    defaults: { _controller: "BackendBundle:Acomodacion:index" }
+
+backend_acomodacion_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "BackendBundle:Acomodacion:show" }
+
+backend_acomodacion_new:
+    pattern:  /new
+    defaults: { _controller: "BackendBundle:Acomodacion:new" }
+
+backend_acomodacion_create:
+    pattern:  /create
+    defaults: { _controller: "BackendBundle:Acomodacion:create" }
+    requirements: { _method: post }
+
+backend_acomodacion_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "BackendBundle:Acomodacion:edit" }
+
+backend_acomodacion_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "BackendBundle:Acomodacion:update" }
+    requirements: { _method: post }

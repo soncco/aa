@@ -1,0 +1,7 @@
+parameters:
+#    tren.example.class: Andean\TrenBundle\Example
+
+services:
+#    tren.example:
+#        class: %tren.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

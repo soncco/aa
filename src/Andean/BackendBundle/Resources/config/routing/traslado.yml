@@ -1,0 +1,27 @@
+# Rutas para gestionar todas las acciones de las entidades de tipo Traslado
+# Generado automáticamente por el comando generate:doctrine:crud
+backend_traslado:
+    pattern:  /
+    defaults: { _controller: "BackendBundle:Traslado:index" }
+
+backend_traslado_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "BackendBundle:Traslado:show" }
+
+backend_traslado_new:
+    pattern:  /new
+    defaults: { _controller: "BackendBundle:Traslado:new" }
+
+backend_traslado_create:
+    pattern:  /create
+    defaults: { _controller: "BackendBundle:Traslado:create" }
+    requirements: { _method: post }
+
+backend_traslado_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "BackendBundle:Traslado:edit" }
+
+backend_traslado_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "BackendBundle:Traslado:update" }
+    requirements: { _method: post }

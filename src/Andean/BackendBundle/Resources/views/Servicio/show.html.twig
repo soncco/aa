@@ -1,0 +1,22 @@
+{% extends '::backend.html.twig' %}
+
+{% block id 'servicio' %}
+{% block title %}Datos de la servicio {{ entity }}{% endblock %}
+
+{% block content %}
+
+<div class="input_wrapper">
+  Nombre: <strong>{{ entity.nombre }}</strong>
+</div>
+<div class="input_wrapper">
+  Precio: <strong>{{ entity.precio }}</strong>
+</div>
+
+{% endblock %}
+{% block button_area %}
+<a href="{{ path('backend_servicio_edit', { 'id': entity.id }) }}" class="button"><div class="icon"></div>Modificar Servicio</a>
+<a href="{{ path('backend_servicio') }}" class="button"><div class="icon back"></div>Volver al listado</a>
+<a class="button_primary button continue" href="{{ path('backend_servicio_new') }}">
+  Añadir un nuevo servicio
+</a>
+{% endblock %}

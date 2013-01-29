@@ -1,0 +1,39 @@
+{% extends '::backend.html.twig' %}
+
+{% block id 'mapi' %}
+{% block title %}Disponibilidad de espacios para Machupichu{% endblock %}
+
+{% block javascripts %}
+{{parent()}} 
+<script type="text/javascript">
+  // Cambiar fecha.
+  $('#cambio-fecha').click(function () {
+    month = $('#month').val();
+    year = $('#year').val();
+    location.href = '{{ path('backend_mapi_single') }}' + '/' + month + '/' + year + '/calendar';
+  });
+</script>
+{% endblock %}
+
+{% block content %}
+
+<p>{{ actualizado }}</p>
+<h3>Calendario de {{ month_name }} - {{ year }}</h3>
+{#{ my_calendar(month, year, entity) }#}
+<div class="input_wrapper inline">
+  <select id="month">
+    {% for i in 1..12 %}
+      <option value="{{ i }}" {% if i == month %}selected="selected"{% endif %}>{{ i }}</option>
+    {% endfor %}
+  </select>
+  <select id="year">
+    {% for j in 2013..2013 %}
+      <option value="{{ j }}">{{ j }}</option>
+    {% endfor %}
+  </select>
+  <a href="#" class="button" id="cambio-fecha">Cambiar mes</a>
+</div>
+{{ calendar | raw }}
+{% endblock %}
+{% block button_area %}
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends '::backend.html.twig' %}
+
+{% block id 'trenhorario' %}
+{% block title %}Añadir un nuevo horario{% endblock %}
+
+{% block content %}
+{{ form_errors(form) }}
+<form action="{{ path('backend_trenhorario_create') }}" method="post" {{ form_enctype(form) }}>
+    <div class="input_wrapper">
+    {{ form_row(form.tipo) }}
+    </div>
+    <div class="input_wrapper">
+    {{ form_row(form.partida) }}
+    {{ form_row(form.llegada) }}
+    </div>
+    <div class="input_wrapper">
+    {{ form_row(form.origen) }}
+    {{ form_row(form.destino) }}
+    {{ form_row(form.precio_adultos) }}    
+    {{ form_row(form.precio_ninos) }}    
+    </div>
+    <p>
+        <button class="button_primary button continue" type="submit">Añadir horario</button>
+    </p>
+    {{ form_rest(form) }}
+</form>
+{% endblock %}
+{% block button_area %}
+<a href="{{ path('backend_trenhorario') }}" class="button"><div class="icon back"></div>Volver al listado</a>
+{% endblock %}

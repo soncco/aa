@@ -1,0 +1,22 @@
+{% extends '::backend.html.twig' %}
+
+{% block id 'hotelhabitacion' %}
+{% block title %}Modificar la habitación de hotel {{ entity }}{% endblock %}
+
+{% block content %}
+<form action="{{ path('backend_hotelhabitacion_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+    <div class="input_wrapper">
+    {{ form_row(edit_form.hotel) }}
+    {{ form_row(edit_form.acomodacion) }}
+    {{ form_row(edit_form.precio) }}
+    </div>
+    {#{ form_widget(edit_form) }#}
+    <p>
+        <button class="button_primary button continue" type="submit">Guardar cambios</button>
+    </p>
+    {{ form_rest(edit_form) }}
+</form>
+{% endblock %}
+{% block button_area %}
+<a href="{{ path('backend_hotelhabitacion') }}" class="button"><div class="icon back"></div>Volver al listado</a>
+{% endblock %}

@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+{% block stylesheets %}{% endblock %}
+<title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+<div id="wrapper">
+  <div id="width_wrapper">
+    <div id="blue_header">
+      <div id="blue_header_inner">
+        {% if is_granted('ROLE_ADMIN')%}
+        <div id="user_dropdown">
+          <div class="label">
+            <div id="label_wrapper">
+              <div id="user_identifier">
+              {{ app.user.nombres }}
+              </div>
+              <div id="user_arrow"></div>
+            </div>
+          </div>
+          <div class="body resize" style="display: none">
+            <div id="body_wrapper">
+              <div id="logout_button"></div>
+              <a id="logout" href="{{ path('admin_logout') }}"> Salir </a></div>
+          </div>
+        </div>
+        {% endif %}
+        <div id="user_menu">
+        	<a href="{{ path('backend_portada') }}">Inicio</a> <a href="#">Ayuda</a>
+        </div>
+      </div>
+    </div>
+    <div id="report">
+      {% block body %}{% endblock %}
+    </div>
+    <div id="page_footer">
+      <div id="page_footer_logo"></div>
+      <div class ="button_section"><a href="#">Acerca de</a></div>
+    </div>
+  </div>
+</div>
+</body>
+{% block javascripts %}{% endblock %}
+</html>

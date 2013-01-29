@@ -1,0 +1,20 @@
+{% extends '::backend.html.twig' %}
+
+{% block id 'trenempresa' %}
+{% block title %}Añadir una nueva empresa de tren{% endblock %}
+
+{% block content %}
+{{ form_errors(form) }}
+<form action="{{ path('backend_trenempresa_create') }}" method="post" {{ form_enctype(form) }}>
+    <div class="input_wrapper">
+    {{ form_row(form.nombre) }}
+    </div>
+    <p>
+        <button class="button_primary button continue" type="submit">Añadir empresa</button>
+    </p>
+    {{ form_rest(form) }}
+</form>
+{% endblock %}
+{% block button_area %}
+<a href="{{ path('backend_trenempresa') }}" class="button"><div class="icon back"></div>Volver al listado</a>
+{% endblock %}

@@ -1,0 +1,16 @@
+hotel:
+    resource: "@HotelBundle/Resources/config/routing.yml"
+    prefix:   /
+
+tren:
+    resource: "@TrenBundle/Resources/config/routing.yml"
+    prefix:   /
+
+backend:
+    resource: "@BackendBundle/Resources/config/routing.yml"
+    prefix:   /admin/
+
+# Ruta de la portada básica del sitio (sin ningún parámetro)
+portada:
+    pattern:  /
+    defaults: { _controller: TrenBundle:Default:portada }

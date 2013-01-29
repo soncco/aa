@@ -1,0 +1,30 @@
+backend_trentipo:
+    pattern:  /
+    defaults: { _controller: "BackendBundle:TrenTipo:index" }
+
+backend_trentipo_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "BackendBundle:TrenTipo:show" }
+
+backend_trentipo_new:
+    pattern:  /new
+    defaults: { _controller: "BackendBundle:TrenTipo:new" }
+
+backend_trentipo_create:
+    pattern:  /create
+    defaults: { _controller: "BackendBundle:TrenTipo:create" }
+    requirements: { _method: post }
+
+backend_trentipo_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "BackendBundle:TrenTipo:edit" }
+
+backend_trentipo_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "BackendBundle:TrenTipo:update" }
+    requirements: { _method: post }
+
+backend_trentipo_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "BackendBundle:TrenTipo:delete" }
+    requirements: { _method: post }

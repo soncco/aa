@@ -1,0 +1,132 @@
+{% extends '::base.html.twig' %}
+{% set ruta = app.request.attributes.get('_route') %}
+{% block stylesheets %}
+<link href="{{ asset('bundles/backend/css/base.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('bundles/backend/css/panel.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('bundles/backend/css/content.css') }}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block javascripts %}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="{{ asset('bundles/backend/js/jquery.dropkick.js') }}" type="text/javascript"></script>
+<script src="{{ asset('bundles/backend/js/main.js') }}" type="text/javascript"></script>
+{% endblock %}
+
+{% block body %}
+<div id="menu">
+  <div class="toolkit">
+    <div class="menu_header">Trenes</div>
+    <a id="dashboard_link" class="link{% if ruta | slice(0,19) == 'backend_trenempresa' %} selected{% endif %}" href="{{ path('backend_trenempresa') }}">
+    <div class="icon"></div>
+    <div class="text">Empresas</div>
+    <div class="highlight_hack"></div>
+    </a>
+    <a id="dashboard_link" class="link{% if ruta | slice(0,16) == 'backend_trentipo' %} selected{% endif %}" href="{{ path('backend_trentipo') }}">
+    <div class="icon"></div>
+    <div class="text">Tipos</div>
+    <div class="highlight_hack"></div>
+    </a>
+    <a id="dashboard_link" class="link{% if ruta | slice(0,19) == 'backend_trenhorario' %} selected{% endif %}" href="{{ path('backend_trenhorario') }}">
+    <div class="icon"></div>
+    <div class="text">Horarios</div>
+    <div class="highlight_hack"></div>
+    </a>
+    <a id="dashboard_link" class="link{% if ruta | slice(0,26) == 'backend_trendisponibilidad' %} selected{% endif %}" href="{{ path('backend_trendisponibilidad') }}">
+    <div class="icon"></div>
+    <div class="text">Disponibilidad</div>
+    <div class="highlight_hack"></div>
+    </a>
+  </div>
+  <!-- .toolkit -->
+  <div class="toolkit">
+    <div class="menu_header">Hoteles</div>
+    <a id="dashboard_link" class="link{% if ruta | slice(0,20) == 'backend_hotelempresa' %} selected{% endif %}" href="{{ path('backend_hotelempresa') }}">
+    <div class="icon"></div>
+    <div class="text">Hoteles/Hostales</div>
+    <div class="highlight_hack"></div>
+    </a>
+    <a id="dashboard_link" class="link{% if ruta | slice(0,23) == 'backend_hotelhabitacion' %} selected{% endif %}" href="{{ path('backend_hotelhabitacion') }}">
+    <div class="icon"></div>
+    <div class="text">Habitaciones</div>
+    <div class="highlight_hack"></div>
+    </a>
+    <a id="dashboard_link" class="link{% if ruta | slice(0,27) == 'backend_hoteldisponibilidad' %} selected{% endif %}" href="{{ path('backend_hoteldisponibilidad') }}">
+    <div class="icon"></div>
+    <div class="text">Disponibilidad</div>
+    <div class="highlight_hack"></div>
+    </a>
+  </div>
+  <!-- .toolkit -->
+  <div class="toolkit">
+    <div class="menu_header">Varios</div>
+    <a id="dashboard_link" class="link{% if ruta | slice(0,21) == 'backend_mapi_calendar' %} selected{% endif %}" href="{{ path('backend_mapi_calendar') }}">
+    <div class="icon"></div>
+    <div class="text">Machupicchu</div>
+    <div class="highlight_hack"></div>
+    </a>
+    <a id="dashboard_link" class="link{% if ruta | slice(0,14) == 'backend_ciudad' %} selected{% endif %}" href="{{ path('backend_ciudad') }}">
+    <div class="icon"></div>
+    <div class="text">Ciudades</div>
+    <div class="highlight_hack"></div>
+    </a>
+    <a id="dashboard_link" class="link{% if ruta | slice(0,19) == 'backend_acomodacion' %} selected{% endif %}" href="{{ path('backend_acomodacion') }}">
+    <div class="icon"></div>
+    <div class="text">Acomodaciones</div>
+    <div class="highlight_hack"></div>
+    </a>
+    <a id="dashboard_link" class="link{% if ruta | slice(0,17) == 'backend_categoria' %} selected{% endif %}" href="{{ path('backend_categoria') }}">
+    <div class="icon"></div>
+    <div class="text">Categorías</div>
+    <div class="highlight_hack"></div>
+    </a>
+  </div>
+  <!-- .toolkit -->
+  <div class="toolkit">
+    <div class="menu_header">Extras</div>
+    <a id="dashboard_link" class="link{% if ruta | slice(0,13) == 'backend_tour' %} selected{% endif %}" href="{{ path('backend_tour') }}">
+    <div class="icon"></div>
+    <div class="text">Tours</div>
+    <div class="highlight_hack"></div>
+    </a>
+    <a id="dashboard_link" class="link{% if ruta | slice(0,16) == 'backend_traslado' %} selected{% endif %}" href="{{ path('backend_traslado') }}">
+    <div class="icon"></div>
+    <div class="text">Traslados</div>
+    <div class="highlight_hack"></div>
+    </a>
+    <a id="dashboard_link" class="link{% if ruta | slice(0,18) == 'backend_servicio' %} selected{% endif %}" href="{{ path('backend_servicio') }}">
+    <div class="icon"></div>
+    <div class="text">Servicios</div>
+    <div class="highlight_hack"></div>
+    </a>
+  </div>
+  <!-- .toolkit -->
+  <div class="toolkit">
+    <div class="menu_header">Sistema</div>
+    <a id="dashboard_link" class="link{% if ruta | slice(0,16) == 'backend_usuario' %} selected{% endif %}" href="{{ path('backend_usuario') }}">
+    <div class="icon"></div>
+    <div class="text">Usuarios</div>
+    <div class="highlight_hack"></div>
+    </a>
+  </div>
+  <!-- .toolkit -->
+</div>
+<div id="report_content">
+  <div id="messages" style="display: none;">
+    {% include ':includes:flashes.html.twig' %}
+  </div>
+  <div id="padding_wrapper">
+    <div id="teaching"></div>
+    <div id="content">
+      <header id="content-header">
+        <h1>{% block title %}{% endblock %}</h1>
+      </header>
+      <div id="content-inner">
+      {% block content %}{% endblock %}
+      </div>
+      <div id="button_area">
+      {% block button_area %}{% endblock %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

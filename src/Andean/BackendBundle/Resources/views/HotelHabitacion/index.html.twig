@@ -1,0 +1,38 @@
+{% extends '::backend.html.twig' %}
+
+{% block id 'hotelhabitacion' %}
+{% block title %}Listado de habitaciones de hotel{% endblock %}
+
+{% block content %}
+<table>
+    <thead>
+        <tr>
+            <th>Hotel</th>
+            <th>Acomodación</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <th>{{ entity.hotel }}</th>
+            <th>{{ entity.acomodacion }}</th>
+            <th>{{ entity.precio }}</th>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('backend_hotelhabitacion_edit', { 'id': entity.id }) }}">Modificar</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+{% block button_area %}
+<a class="button_primary button continue" href="{{ path('backend_hotelhabitacion_new') }}">
+  Añadir una nueva habitación
+</a>
+{% endblock %}

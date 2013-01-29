@@ -1,0 +1,119 @@
+#content-header {
+	background-color:#eff2f8;
+	background-image:-moz-linear-gradient(top, #f3f5fa, #eaedf4);
+	background-image:-ms-linear-gradient(top, #f3f5fa, #eaedf4);
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#f3f5fa), to(#eaedf4));
+	background-image:-webkit-linear-gradient(top, #f3f5fa, #eaedf4);
+	background-image:-o-linear-gradient(top, #f3f5fa 0, #eaedf4 0);
+	background-image:linear-gradient(top, #f3f5fa 0, #eaedf4 0);
+	background-repeat:repeat-x;
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f3f5fa', endColorstr='#eaedf4', GradientType=0);
+	padding:13px 17px;
+	border-bottom:1px solid #b7c5d0
+}
+
+#content-header h1 {
+	color:#5c617b;
+	text-shadow:0 1px rgba(255, 255, 255, 0.7);
+	font-family:proxima-nova, sans-serif;
+	letter-spacing:-0.03em;
+	font-size:22px;
+	font-weight:600
+}
+
+#content-inner {
+	padding:20px;
+	background-color:#e0e3ed
+}
+
+#button_area {
+	background-color:#eff1f6;
+	padding:14px 20px 10px 0;
+	border-top:1px solid #cfd6df;
+  border-bottom:1px solid #cfd6df;
+	height:42px;
+	-webkit-border-radius:0 0 3px 0;
+	-moz-border-radius:0 0 3px 0;
+	border-radius:0 0 3px 0
+}
+#button_area .button {
+	float:right;
+	margin-left:12px;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	padding:7px 15px;
+	min-width:94px;
+	height:37px
+}
+
+.input_wrapper {
+	padding:12px;
+	border:1px solid #c2c2d3;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	border-radius:3px;
+	-webkit-box-shadow:inset 0 1px #fff, 0 1px 2px rgba(0, 0, 0, 0.07);
+	-moz-box-shadow:inset 0 1px #fff, 0 1px 2px rgba(0, 0, 0, 0.07);
+	box-shadow:inset 0 1px #fff, 0 1px 2px rgba(0, 0, 0, 0.07);
+	background:#f1f3f7
+}
+.input_wrapper input {
+	padding:8px 10px 7px;
+	font-size:16px;
+	font-weight:500;
+	color:#5c617b;
+	background-color:#f6f7f8;
+	-webkit-box-shadow:inset 0 1px 2px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow:inset 0 1px 2px rgba(0, 0, 0, 0.1);
+	box-shadow:inset 0 1px 2px rgba(0, 0, 0, 0.1)
+}
+
+/* Calendar */
+table.calendar {
+  border-left:1px solid #999;
+  width: 100%;
+}
+
+td.calendar-day  {
+  min-height:80px;
+  font-size:11px;
+  position:relative;
+}
+
+* html div.calendar-day {
+  height:80px;
+}
+
+td.calendar-day:hover  {
+  background:#eceff5;
+}
+
+td.calendar-day-np  {
+  background:#eee;
+  min-height:80px;
+}
+
+* html div.calendar-day-np {
+  height:80px;
+}
+
+div.day-number 
+{
+  background:#59AAE9;
+  padding:5px;
+  color:#fff;
+  font-weight:bold;
+  float:right;
+  margin:-5px -5px 0 0;
+  width:20px;
+  text-align:center;
+}
+/* shared */
+td.calendar-day,
+td.calendar-day-np {
+  width:120px;
+  padding:5px;
+  border-bottom:1px solid #999;
+  border-right:1px solid #999;
+}

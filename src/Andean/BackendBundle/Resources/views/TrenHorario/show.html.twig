@@ -1,0 +1,31 @@
+{% extends '::backend.html.twig' %}
+
+{% block id 'trenhorario' %}
+{% block title %}Datos de la empresa de tren {{ entity }}{% endblock %}
+
+{% block content %}
+
+<div class="input_wrapper">
+  Tren: <strong>{{ entity.tipo }}</strong>
+</div>
+<div class="input_wrapper">
+  Itinerario: <strong>{{ entity.origen }} - {{ entity.destino }}</strong>
+</div>
+<div class="input_wrapper">
+  Partida: <strong>{{ entity.partida }}</strong> Llegada: <strong>{{ entity.llegada }}</strong>
+</div>
+<div class="input_wrapper">
+  Precio adultos: <strong>{{ entity.precioadultos}}</strong>
+</div>
+<div class="input_wrapper">
+  Precio niños: <strong>{{ entity.precioninos}}</strong>
+</div>
+
+{% endblock %}
+{% block button_area %}
+<a href="{{ path('backend_trenhorario_edit', { 'id': entity.id }) }}" class="button"><div class="icon"></div>Modificar horario</a>
+<a href="{{ path('backend_trenhorario') }}" class="button"><div class="icon back"></div>Volver al listado</a>
+<a class="button_primary button continue" href="{{ path('backend_trenhorario_new') }}">
+  Añadir un nuevo horario
+</a>
+{% endblock %}

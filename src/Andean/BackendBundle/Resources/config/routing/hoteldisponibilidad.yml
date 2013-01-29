@@ -1,0 +1,16 @@
+backend_hoteldisponibilidad:
+    pattern:  /
+    defaults: { _controller: "BackendBundle:HotelDisponibilidad:index" }
+    
+backend_hoteldisponibilidad_calendar:
+    pattern:  /{id}/calendar
+    defaults: { _controller: "BackendBundle:HotelDisponibilidad:calendar" }
+    
+_backend_hoteldisponibilidad_calendar:
+    pattern:  /{id}/{month}/{year}/calendar
+    defaults: { _controller: "BackendBundle:HotelDisponibilidad:calendar" }
+    
+backend_hoteldisponibilidad_update:
+    pattern:  /update
+    defaults: { _controller: "BackendBundle:HotelDisponibilidad:update", id: null, date: null, espacios: null }
+    #requirements: { _method: post }

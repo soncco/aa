@@ -1,0 +1,30 @@
+backend_hotelhabitacion:
+    pattern:  /
+    defaults: { _controller: "BackendBundle:HotelHabitacion:index" }
+
+backend_hotelhabitacion_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "BackendBundle:HotelHabitacion:show" }
+
+backend_hotelhabitacion_new:
+    pattern:  /new
+    defaults: { _controller: "BackendBundle:HotelHabitacion:new" }
+
+backend_hotelhabitacion_create:
+    pattern:  /create
+    defaults: { _controller: "BackendBundle:HotelHabitacion:create" }
+    requirements: { _method: post }
+
+backend_hotelhabitacion_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "BackendBundle:HotelHabitacion:edit" }
+
+backend_hotelhabitacion_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "BackendBundle:HotelHabitacion:update" }
+    requirements: { _method: post }
+
+backend_hotelhabitacion_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "BackendBundle:HotelHabitacion:delete" }
+    requirements: { _method: post }

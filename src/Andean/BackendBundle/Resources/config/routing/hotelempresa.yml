@@ -1,0 +1,30 @@
+backend_hotelempresa:
+    pattern:  /
+    defaults: { _controller: "BackendBundle:HotelEmpresa:index" }
+
+backend_hotelempresa_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "BackendBundle:HotelEmpresa:show" }
+
+backend_hotelempresa_new:
+    pattern:  /new
+    defaults: { _controller: "BackendBundle:HotelEmpresa:new" }
+
+backend_hotelempresa_create:
+    pattern:  /create
+    defaults: { _controller: "BackendBundle:HotelEmpresa:create" }
+    requirements: { _method: post }
+
+backend_hotelempresa_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "BackendBundle:HotelEmpresa:edit" }
+
+backend_hotelempresa_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "BackendBundle:HotelEmpresa:update" }
+    requirements: { _method: post }
+
+backend_hotelempresa_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "BackendBundle:HotelEmpresa:delete" }
+    requirements: { _method: post }

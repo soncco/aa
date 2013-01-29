@@ -1,0 +1,27 @@
+# Rutas para gestionar todas las acciones de las entidades de tipo Servicio
+# Generado automáticamente por el comando generate:doctrine:crud
+backend_servicio:
+    pattern:  /
+    defaults: { _controller: "BackendBundle:Servicio:index" }
+
+backend_servicio_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "BackendBundle:Servicio:show" }
+
+backend_servicio_new:
+    pattern:  /new
+    defaults: { _controller: "BackendBundle:Servicio:new" }
+
+backend_servicio_create:
+    pattern:  /create
+    defaults: { _controller: "BackendBundle:Servicio:create" }
+    requirements: { _method: post }
+
+backend_servicio_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "BackendBundle:Servicio:edit" }
+
+backend_servicio_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "BackendBundle:Servicio:update" }
+    requirements: { _method: post }

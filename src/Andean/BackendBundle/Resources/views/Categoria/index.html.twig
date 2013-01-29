@@ -1,0 +1,34 @@
+{% extends '::backend.html.twig' %}
+
+{% block id 'categoria' %}
+{% block title %}Listado de categorías{% endblock %}
+
+{% block content %}
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <th>{{ entity.nombre }}</th>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('backend_categoria_edit', { 'id': entity.id }) }}">Modificar</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+{% block button_area %}
+<a class="button_primary button continue" href="{{ path('backend_categoria_new') }}">
+  Añadir una nueva categoría
+</a>
+{% endblock %}

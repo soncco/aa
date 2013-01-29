@@ -1,0 +1,38 @@
+{% extends '::backend.html.twig' %}
+
+{% block id 'trentipo' %}
+{% block title %}Listado de tipos{% endblock %}
+
+{% block content %}
+<table>
+    <thead>
+        <tr>
+            <th>Número</th>
+            <th>Empresa</th>
+            <th>Tipo</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <th>{{ entity.numero }}</th>
+            <th>{{ entity.empresa }}</th>
+            <th>{{ entity.nombre }}</th>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('backend_trentipo_edit', { 'id': entity.id }) }}">Modificar</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+{% block button_area %}
+<a class="button_primary button continue" href="{{ path('backend_trentipo_new') }}">
+  Añadir un nuevo tipo
+</a>
+{% endblock %}

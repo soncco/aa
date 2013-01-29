@@ -1,0 +1,35 @@
+{% extends '::backend.html.twig' %}
+
+{% block id 'hoteldisponibilidad' %}
+{% block title %}Disponibilidad de habitaciones{% endblock %}
+
+{% block content %}
+<table>
+    <thead>
+        <tr>
+            <th>Hotel</th>
+            <th>Acomodación</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <th>{{ entity.hotel }}</th>
+            <th>{{ entity.acomodacion }}</th>
+            <th>{{ entity.precio }}</th>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('backend_hoteldisponibilidad_calendar', { 'id': entity.id }) }}">Ver o modificar disponibilidad</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+{% block button_area %}
+{% endblock %}

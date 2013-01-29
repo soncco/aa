@@ -1,0 +1,30 @@
+backend_trenhorario:
+    pattern:  /
+    defaults: { _controller: "BackendBundle:TrenHorario:index" }
+
+backend_trenhorario_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "BackendBundle:TrenHorario:show" }
+
+backend_trenhorario_new:
+    pattern:  /new
+    defaults: { _controller: "BackendBundle:TrenHorario:new" }
+
+backend_trenhorario_create:
+    pattern:  /create
+    defaults: { _controller: "BackendBundle:TrenHorario:create" }
+    requirements: { _method: post }
+
+backend_trenhorario_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "BackendBundle:TrenHorario:edit" }
+
+backend_trenhorario_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "BackendBundle:TrenHorario:update" }
+    requirements: { _method: post }
+
+backend_trenhorario_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "BackendBundle:TrenHorario:delete" }
+    requirements: { _method: post }

@@ -1,0 +1,30 @@
+backend_categoria:
+    pattern:  /
+    defaults: { _controller: "BackendBundle:Categoria:index" }
+
+backend_categoria_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "BackendBundle:Categoria:show" }
+
+backend_categoria_new:
+    pattern:  /new
+    defaults: { _controller: "BackendBundle:Categoria:new" }
+
+backend_categoria_create:
+    pattern:  /create
+    defaults: { _controller: "BackendBundle:Categoria:create" }
+    requirements: { _method: post }
+
+backend_categoria_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "BackendBundle:Categoria:edit" }
+
+backend_categoria_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "BackendBundle:Categoria:update" }
+    requirements: { _method: post }
+
+backend_categoria_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "BackendBundle:Categoria:delete" }
+    requirements: { _method: post }
